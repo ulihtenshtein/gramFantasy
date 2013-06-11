@@ -1,0 +1,82 @@
+.layer {
+ width:1020px;
+ position: relative;
+ border-top: 3px solid red;
+ margin: auto;
+}
+.sidebar, .content { position:absolute;}
+.sidebar {
+ right:0;
+ width: 220px;
+ background-color:#fca;
+ border-radius: 0 0 20px 20px;
+
+}
+.sidebar a {
+ text-decoration: none;
+}
+.content {
+/* border: 2px solid black;*/
+ width: 778px;
+ padding: 10px;
+}
+.verse {
+padding-left:100px;
+}
+.verse-wrape {
+text-align:center;
+}
+abbr {
+border-bottom: 1px dashed red;
+}
+.word {
+font-weight:bold;
+color:green;
+}
+.spell {
+font-style:italic;
+display:none;
+}
+.translation {
+font-style:italic;
+color:blue;
+display:none;
+}
+.letter {
+font-style:oblique;
+color:green;
+font-weight:bolder;
+font-size:1.3em;
+}
+.marked {
+ color:blue;
+font-style:oblique;
+}
+ul {
+list-style:none;
+}
+h1 {
+ color:navy;
+text-align:center;
+}
+h1::first-letter {
+color:red;
+font-size: 1.4em;
+text-shadow:-3px 2px 0.05em navy;
+}
+.glossary {
+ position:fixed;
+ right:2px;
+ top: 5%;
+ border-radius: 20px;
+ padding: 10px;
+ overflow:auto;
+}
+.prompt {
+text-align:center;
+display:none;
+}
+.prompt span {
+  font-size: 0.8em;
+  color:red;
+}
