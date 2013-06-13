@@ -52,6 +52,9 @@ font-size:1.3em;
  color:blue;
 font-style:oblique;
 }
+.parentheses {
+font-style:oblique;
+}
 ul {
 list-style:none;
 }
@@ -76,7 +79,13 @@ text-shadow:-3px 2px 0.05em navy;
 text-align:center;
 display:none;
 }
-.prompt span {
+
+.prompt, .prompt1 span {
   font-size: 0.8em;
   color:red;
+  cursor:pointer;
+}
+.prompt1 .author {
+ padding-left:400px;
+ cursor:text;
 }
