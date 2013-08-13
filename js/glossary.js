@@ -1,5 +1,8 @@
 // event listener for glossary
 var idGlossary = 'glos';
+var ul;
+var glossary = document.getElementById(idGlossary);
+
 function onClickWord(event) {
 			openGlossary(event);
 			var curElem = this;
@@ -19,15 +22,19 @@ function onClickWord(event) {
 					};
 				};
 			};
-			var p = document.createElement('P');
+			if( !ul ) {
+				ul = document.createElement('ul');
+				glossary.appendChild(ul);	
+			}
+			var li = document.createElement('li');
 			curElem = this.cloneNode();
 			curElem.innerHTML = this.innerHTML;
-			p.appendChild(curElem);
-			if( spell ) p.appendChild(spell);
-			if( trans ) p.appendChild(trans);
-			p.style.marginTop = '2px';
-			p.style.marginBottom = '2px';
-			document.getElementById(idGlossary).appendChild(p);
+			li.appendChild(curElem);
+			if( spell ) li.appendChild(spell);
+			if( trans ) li.appendChild(trans);
+			li.style.marginTop = '2px';
+			li.style.marginBottom = '2px';
+			ul.appendChild(li);
 		};
 function setEvent () {
 	var elems = document.getElementsByClassName('word');
@@ -36,30 +43,17 @@ function setEvent () {
         };
         
 };
-setEvent();
-var glzIndex, glWidth, glHeight; 
+setEvent(); 
 function openGlossary(event) {
-	var glossary = document.getElementById(idGlossary);
-        glzIndex = glossary.style.zIndex;
-	glossary.style.zIndex = '20';
-        glWidth = glossary.style.width;
-	glossary.style.width = '280px';
-	glHeight = glossary.style.height;
-	glossary.style.height = '400px';
-	glossary.style.backgroundColor = '#ffc';
-	glossary.style.opacity = 0.9;
 	glossary.onclick = closeGlossary;
-	document.getElementsByClassName('prompt')[0].style.display = 'block';
+	glossary.style.display = 'block';
 }
 function closeGlossary(event) {
-var glossary = document.getElementById(idGlossary);
-	var pp = glossary.getElementsByTagName('P');
-	while(pp.length > 0 ) {pp[0].parentNode.removeChild(pp[0]);};
-        	document.getElementsByClassName('prompt')[0].style.display = 'none';
-	glossary.style.zIndex = '';
-	glossary.style.width = '';
-	glossary.style.height = '';
-	glossary.style.backgroundColor = '';
+	var pp = glossary.getElementsByTagName('ul');
+
+	if(pp.length > 0 ) {pp[0].parentNode.removeChild(pp[0]);};  
+	ul = undefined;
+	glossary.style.display = 'none';
 }
 function deleteParentheses(text) {
  var result = text.replace(/\(/, '   - ').replace(/\)/,'');
