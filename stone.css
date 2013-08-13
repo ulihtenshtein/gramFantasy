@@ -85,7 +85,16 @@ display:none;
   color:red;
   cursor:pointer;
 }
-.prompt1 .author {
- padding-left:400px;
+.prompt1, span.author {
  cursor:text;
+}
+.author {
+ float:right;
+}
+.author:after {
+	content:'.';
+	visibility:hidden;
+	clear:right;
+	cursor:text;
+	display:block;
 }
