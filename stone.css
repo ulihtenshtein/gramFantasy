@@ -58,7 +58,7 @@ font-style:oblique;
 ul {
 list-style:none;
 }
-h1 {
+h1, h2 {
  color:navy;
 text-align:center;
 }
@@ -102,4 +102,18 @@ text-align:center;
 	clear:right;
 	cursor:text;
 	display:block;
+}
+
+.content-bg .content {
+	text-align:center;
+	margin:auto;
+	border:1px solid black;
+	width:80%;
+}
+section,header {
+	display:block;
+}
+a:hover {
+	color:green;
+	text-shadow:-1px 1px 0.05em gray;
 }
