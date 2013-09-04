@@ -104,10 +104,9 @@ text-align:center;
 	display:block;
 }
 
-.content-bg .content {
+.content-bg {
 	text-align:center;
 	margin:auto;
-	border:1px solid black;
 	width:80%;
 }
 section,header {
